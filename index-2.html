@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lire et faire lire Charente</title>
+    <style>
+        /* Reset de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Applique le défilement fluide à toute la page */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* En-tête avec un effet de parallaxe */
+        .header {
+            position: relative;
+            height: 100vh;
+            background-image: url('img/stardust.png');
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* Ombre pour améliorer la lisibilité */
+            z-index: 1;
+        }
+
+        .header h1 {
+            z-index: 2;
+            font-size: 4em;
+            text-transform: uppercase;
+			color: #F2B705;
+            letter-spacing: 5px;
+            animation: fadeIn 2s ease-out;
+        }
+
+        /* Animation de fade-in */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Menu de navigation */
+        .nav_menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav_menu a {
+            font-size: 1.2em;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav_menu a:hover {
+            color: #ffcc00;
+        }
+
+        /* Sections principales */
+        .content-section {
+            padding: 80px 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+			background-image: url('img/stardust.png');
+        }
+
+        .content-section h2 {
+            font-size: 3em;
+            margin-bottom: 30px;
+			color: #F2B705;
+            font-weight: bold;
+        }
+
+        .content-section p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Liste d'articles */
+        .article-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .article {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            max-width: 320px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .article h3 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .article p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Liste de livres */
+        .book-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .book-item {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .book-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .book-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .book-item h3 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .book-item p {
+            font-size: 1.1em;
+            color: #777;
+        }
+
+        /* Pied de page */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 1.2em;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsivité */
+        @media (max-width: 768px) {
+            .nav_menu {
+                flex-direction: column;
+                align-items: center;
+                position: static;
+                margin-top: 20px;
+            }
+
+            .article-list {
+                justify-content: center;
+            }
+
+            .article {
+                max-width: 100%;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- En-tête -->
+    <div class="header">
+        <h1>Lire et faire lire</h1>
+        <div class="nav_menu">
+            <a href="#livres">Livres</a>
+            <a href="#actu">Actu</a>
+            <a href="#formation">Formation</a>
+        </div>
+    </div>
+
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Nos Livres</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+
+        <div class="book-list">
+            <div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 1">
+                <h3>Le Voyage de l'âme</h3>
+                <p>Un voyage littéraire à travers des horizons inexplorés, qui vous emmène dans les profondeurs de l'existence humaine.</p>
+            </div>
+            <div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 2">
+                <h3>La Plume et l'Encre</h3>
+                <p>Un roman intemporel sur le pouvoir des mots et leur capacité à transformer le monde autour de nous.</p>
+            </div>
+            <div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 3">
+                <h3>Le Dernier Poème</h3>
+                <p>Une œuvre poignante qui explore les thèmes de l'amour, du sacrifice et de la rédemption.</p>
+            </div>
+            <div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 4">
+                <h3>Échos du Silence</h3>
+                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
+            </div>
+			<div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 4">
+                <h3>Échos du Silence</h3>
+                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
+            </div>
+			<div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 4">
+                <h3>Échos du Silence</h3>
+                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
+            </div>
+			<div class="book-item">
+                <img src="https://via.placeholder.com/250" alt="Livre 4">
+                <h3>Échos du Silence</h3>
+                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Section Actualités -->
+    <div id="actu" class="content-section parallax">
+        <h2>Actualités</h2>
+        <div class="article-list">
+            <div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+			<div class="article">
+                <h3>Nouvelle Initiative</h3>
+                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+            </div>
+            <div class="article">
+                <h3>Événement à venir</h3>
+                <p>Ne manquez pas notre prochain événement pour les passionnés de littérature.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section Formation -->
+    <div id="formation" class="content-section">
+        <h2>Formations</h2>
+        <div class="article-list">
+            <div class="article">
+                <h3>Formation en Lecture</h3>
+                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+            </div>
+			<div class="article">
+                <h3>Formation en Lecture</h3>
+                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+            </div>
+			<div class="article">
+                <h3>Formation en Lecture</h3>
+                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+            </div>
+			<div class="article">
+                <h3>Formation en Lecture</h3>
+                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+            </div>
+			<div class="article">
+                <h3>Formation en Lecture</h3>
+                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+            </div>
+            <div class="article">
+                <h3>Écriture Créative</h3>
+                <p>Libérez votre créativité et explorez les différentes formes d'écriture créative.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pied de page -->
+    <div class="footer">
+        <p>© 2024 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://www.linkedin.com/in/antonio-laualiki-472a33257">Createur du site</a></p>
+    </div>
+
+</body>
+
+</html>
+
