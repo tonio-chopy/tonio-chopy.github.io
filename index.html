@@ -31,6 +31,7 @@
             background-image: url('img/stardust.png');
             background-position: center;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
@@ -53,9 +54,18 @@
             z-index: 2;
             font-size: 3em;
             text-transform: uppercase;
-			color: #F2B705;
+            color: #F2B705;
             letter-spacing: 5px;
             animation: fadeIn 2s ease-out;
+        }
+
+        .header p {
+            z-index: 2;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #ffffff;
+            font-weight: 300;
+            animation: fadeIn 2.5s ease-out;
         }
 
         /* Animation de fade-in */
@@ -99,13 +109,13 @@
             padding: 80px 20px;
             text-align: center;
             animation: fadeIn 1.5s ease-out;
-			background-image: url('img/stardust.png');
+            background-image: url('img/stardust.png');
         }
 
         .content-section h2 {
             font-size: 3em;
             margin-bottom: 30px;
-			color: #F2B705;
+            color: #F2B705;
             font-weight: bold;
         }
 
@@ -193,6 +203,31 @@
             color: #777;
         }
 
+        /* Bouton Retour en haut */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #F2B705;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.5em;
+            text-decoration: none;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-to-top:hover {
+            background-color: #ffcc00;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transform: translateY(-5px);
+        }
+
         /* Pied de page */
         .footer {
             background-color: #333;
@@ -222,16 +257,12 @@
                 margin-top: 20px;
             }
 
-            .article-list {
-                justify-content: center;
-            }
-
-            .article {
-                max-width: 100%;
-            }
-
             .header h1 {
                 font-size: 2.5em;
+            }
+
+            .header p {
+                font-size: 1.2em;
             }
         }
     </style>
@@ -240,8 +271,9 @@
 <body>
 
     <!-- En-tête -->
-    <div class="header">
+    <div id="top" class="header">
         <h1>Lire et faire lire</h1>
+        <p style="font-weight:200;">Les histoires n'attendent que vous pour être lues</p>
         <div class="nav_menu">
             <a href="#livres">Livres</a>
             <a href="#actu">Actu</a>
@@ -253,7 +285,6 @@
     <div id="livres" class="content-section">
         <h2>Nos Livres</h2>
         <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
-
         <div class="book-list">
             <div class="book-item">
                 <img src="https://via.placeholder.com/250" alt="Livre 1">
@@ -265,68 +296,14 @@
                 <h3>La Plume et l'Encre</h3>
                 <p>Un roman intemporel sur le pouvoir des mots et leur capacité à transformer le monde autour de nous.</p>
             </div>
-            <div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 3">
-                <h3>Le Dernier Poème</h3>
-                <p>Une œuvre poignante qui explore les thèmes de l'amour, du sacrifice et de la rédemption.</p>
-            </div>
-            <div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 4">
-                <h3>Échos du Silence</h3>
-                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
-            </div>
-			<div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 4">
-                <h3>Échos du Silence</h3>
-                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
-            </div>
-			<div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 4">
-                <h3>Échos du Silence</h3>
-                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
-            </div>
-			<div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 4">
-                <h3>Échos du Silence</h3>
-                <p>Un thriller captivant qui nous plonge dans les mystères du silence et de la quête de vérité.</p>
-            </div>
-
         </div>
     </div>
 
     <!-- Section Actualités -->
-    <div id="actu" class="content-section parallax">
+    <div id="actu" class="content-section">
         <h2>Actualités</h2>
         <div class="article-list">
             <div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-            </div>
-			<div class="article">
                 <h3>Nouvelle Initiative</h3>
                 <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
             </div>
@@ -345,28 +322,15 @@
                 <h3>Formation en Lecture</h3>
                 <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
             </div>
-			<div class="article">
-                <h3>Formation en Lecture</h3>
-                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
-            </div>
-			<div class="article">
-                <h3>Formation en Lecture</h3>
-                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
-            </div>
-			<div class="article">
-                <h3>Formation en Lecture</h3>
-                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
-            </div>
-			<div class="article">
-                <h3>Formation en Lecture</h3>
-                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
-            </div>
             <div class="article">
                 <h3>Écriture Créative</h3>
                 <p>Libérez votre créativité et explorez les différentes formes d'écriture créative.</p>
             </div>
         </div>
     </div>
+
+    <!-- Bouton Retour en haut -->
+    <a href="#top" class="back-to-top">↑</a>
 
     <!-- Pied de page -->
     <div class="footer">
@@ -376,4 +340,3 @@
 </body>
 
 </html>
-
