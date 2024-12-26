@@ -19,8 +19,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f8f8f8;
-            color: #fff;
+            background-color: #ffffff;
+            color: #333;
             line-height: 1.6;
         }
 
@@ -54,7 +54,7 @@
             z-index: 2;
             font-size: 3em;
             text-transform: uppercase;
-            color: #F2B705;
+            color: #E63946; /* Rouge vif */
             letter-spacing: 5px;
             animation: fadeIn 2s ease-out;
         }
@@ -83,25 +83,30 @@
 
         /* Menu de navigation */
         .nav_menu {
-            position: absolute;
-            top: 20px;
+            position: fixed;
+            bottom: 80px;
             right: 20px;
             z-index: 2;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .nav_menu a {
-            font-size: 1.2em;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #E63946; /* Rouge vif */
             color: white;
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
-            transition: color 0.3s ease;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .nav_menu a:hover {
-            color: #ffcc00;
+            background-color: #457B9D; /* Bleu */
+            color: white;
         }
 
         /* Sections principales */
@@ -109,20 +114,20 @@
             padding: 80px 20px;
             text-align: center;
             animation: fadeIn 1.5s ease-out;
-            background-image: url('img/stardust.png');
+            background-color: #F1FAEE; /* Blanc cassé */
         }
 
         .content-section h2 {
             font-size: 3em;
             margin-bottom: 30px;
-            color: #F2B705;
+            color: #E63946; /* Rouge vif */
             font-weight: bold;
         }
 
         .content-section p {
             font-size: 1.2em;
             line-height: 1.8;
-            color: white;
+            color: #333;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -161,6 +166,25 @@
         .article p {
             font-size: 1.1em;
             color: #777;
+        }
+
+        .article .button-stylized {
+            background-color: #E63946; /* Rouge vif */
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .article .button-stylized:hover {
+            background-color:whitesmoke;
+            color: #E63946; /* Rouge vif */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
 
         /* Liste de livres */
@@ -203,6 +227,25 @@
             color: #777;
         }
 
+        .book-item .button-stylized {
+            background-color: #E63946; /* Rouge vif */
+            border: none;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2em;
+            padding: 10px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            margin-top: 10px;
+        }
+
+        .book-item .button-stylized:hover {
+            background-color:whitesmoke;
+            color: #E63946; /* Rouge vif */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
         /* Bouton Retour en haut */
         .back-to-top {
             position: fixed;
@@ -210,7 +253,7 @@
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: #F2B705;
+            background-color: #E63946; /* Rouge vif */
             color: #fff;
             text-align: center;
             line-height: 50px;
@@ -223,14 +266,15 @@
         }
 
         .back-to-top:hover {
-            background-color: #ffcc00;
+            background-color:#457B9D;
+            color:whitesmoke;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             transform: translateY(-5px);
         }
 
         /* Pied de page */
         .footer {
-            background-color: #333;
+            background-color: #457B9D; /* Bleu */
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -349,11 +393,13 @@
     <div id="top" class="header">
         <h1>Lire et faire lire</h1>
         <p style="font-weight:200;">Les histoires n'attendent que vous pour être lues</p>
-        <div class="nav_menu">
-            <a href="#livres">Livres</a>
-            <a href="#actu">Actu</a>
-            <a href="#formation">Formation</a>
-        </div>
+    </div>
+
+    <!-- Menu de navigation en bas à droite -->
+    <div class="nav_menu">
+        <a href="#livres">Livres</a>
+        <a href="#actu">Actualités</a>
+        <a href="#formation">Formation</a>
     </div>
 
     <!-- Section Livres -->
@@ -365,11 +411,13 @@
                 <img src="https://via.placeholder.com/250" alt="Livre 1">
                 <h3>Le Voyage de l'âme</h3>
                 <p>Un voyage littéraire à travers des horizons inexplorés, qui vous emmène dans les profondeurs de l'existence humaine.</p>
+                <button class="button-stylized">En savoir plus</button>
             </div>
             <div class="book-item">
                 <img src="https://via.placeholder.com/250" alt="Livre 2">
                 <h3>La Plume et l'Encre</h3>
                 <p>Un roman intemporel sur le pouvoir des mots et leur capacité à transformer le monde autour de nous.</p>
+                <button class="button-stylized">En savoir plus</button>
             </div>
         </div>
     </div>
@@ -381,10 +429,12 @@
             <div class="article">
                 <h3>Nouvelle Initiative</h3>
                 <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+                <button class="button-stylized">Lire plus</button>
             </div>
             <div class="article">
                 <h3>Événement à venir</h3>
                 <p>Ne manquez pas notre prochain événement pour les passionnés de littérature.</p>
+                <button class="button-stylized">Lire plus</button>
             </div>
         </div>
     </div>
@@ -396,10 +446,12 @@
             <div class="article">
                 <h3>Formation en Lecture</h3>
                 <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
+                <button class="button-stylized">Lire plus</button>
             </div>
             <div class="article">
                 <h3>Écriture Créative</h3>
                 <p>Libérez votre créativité et explorez les différentes formes d'écriture créative.</p>
+                <button class="button-stylized">Lire plus</button>
             </div>
         </div>
     </div>
@@ -409,7 +461,7 @@
 
     <!-- Pied de page -->
     <div class="footer">
-        <p>© 2024 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://github.com/tonio-chopy">Createur du site</a></p>
+        <p>© 2024 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://github.com/tonio-chopy">Créateur du site</a></p>
     </div>
 
 </body>
