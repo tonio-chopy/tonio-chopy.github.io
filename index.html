@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +13,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Applique le défilement fluide à toute la page */
+            scroll-behavior: smooth;
         }
 
         body {
@@ -46,7 +45,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* Ombre pour améliorer la lisibilité */
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
 
@@ -54,7 +53,7 @@
             z-index: 2;
             font-size: 3em;
             text-transform: uppercase;
-            color: #E63946; /* Rouge vif */
+            color: #E63946;
             letter-spacing: 5px;
             animation: fadeIn 2s ease-out;
         }
@@ -68,13 +67,11 @@
             animation: fadeIn 2.5s ease-out;
         }
 
-        /* Animation de fade-in */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
                 transform: translateY(50px);
             }
-
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -95,7 +92,7 @@
         .nav_menu a {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #E63946; /* Rouge vif */
+            background-color: #E63946;
             color: white;
             text-decoration: none;
             text-transform: uppercase;
@@ -105,7 +102,7 @@
         }
 
         .nav_menu a:hover {
-            background-color: #457B9D; /* Bleu */
+            background-color: #457B9D;
             color: white;
         }
 
@@ -114,13 +111,13 @@
             padding: 80px 20px;
             text-align: center;
             animation: fadeIn 1.5s ease-out;
-            background-color: #F1FAEE; /* Blanc cassé */
+            background-color: #F1FAEE;
         }
 
         .content-section h2 {
             font-size: 3em;
             margin-bottom: 30px;
-            color: #E63946; /* Rouge vif */
+            color: #E63946;
             font-weight: bold;
         }
 
@@ -132,80 +129,66 @@
             margin: 0 auto;
         }
 
-        /* Liste d'articles */
-        .article-list {
+        /* Ajout des styles pour le carousel */
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-wrapper {
             display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
+            transition: transform 0.3s ease;
         }
 
-        .article {
-            background-color: #fff;
-            color: #333;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 100%;
-            max-width: 320px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .article:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .article h3 {
-            font-size: 1.8em;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .article p {
-            font-size: 1.1em;
-            color: #777;
-        }
-
-        .article .button-stylized {
-            background-color: #E63946; /* Rouge vif */
-            border: none;
-            border-radius: 50px;
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: #E63946;
             color: white;
-            font-size: 1.2em;
-            padding: 10px 30px;
+            border: none;
+            border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            margin-top: 10px;
+            font-size: 20px;
+            z-index: 10;
+            transition: background-color 0.3s ease;
         }
 
-        .article .button-stylized:hover {
-            background-color:whitesmoke;
-            color: #E63946; /* Rouge vif */
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        .carousel-nav:hover {
+            background: #457B9D;
         }
 
-        /* Liste de livres */
-        .book-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        /* Adaptation des styles existants pour le carousel */
+        .book-list, .article-list {
+            display: flex;
             gap: 30px;
-            margin-top: 40px;
+            transition: transform 0.3s ease;
         }
 
-        .book-item {
+        .book-item, .article {
+            min-width: 300px;
+            flex-shrink: 0;
             background-color: #fff;
-            color: #333;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: center;
         }
 
-        .book-item:hover {
+        .book-item:hover, .article:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
@@ -216,19 +199,19 @@
             margin-bottom: 20px;
         }
 
-        .book-item h3 {
+        .book-item h3, .article h3 {
             font-size: 1.6em;
             margin-bottom: 15px;
             color: #333;
         }
 
-        .book-item p {
+        .book-item p, .article p {
             font-size: 1.1em;
             color: #777;
         }
 
-        .book-item .button-stylized {
-            background-color: #E63946; /* Rouge vif */
+        .button-stylized {
+            background-color: #E63946;
             border: none;
             border-radius: 50px;
             color: white;
@@ -240,20 +223,20 @@
             margin-top: 10px;
         }
 
-        .book-item .button-stylized:hover {
-            background-color:whitesmoke;
-            color: #E63946; /* Rouge vif */
+        .button-stylized:hover {
+            background-color: whitesmoke;
+            color: #E63946;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
         }
 
-        /* Bouton Retour en haut */
+        /* Style du bouton retour en haut */
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 50px;
             height: 50px;
-            background-color: #E63946; /* Rouge vif */
+            background-color: #E63946;
             color: #fff;
             text-align: center;
             line-height: 50px;
@@ -266,15 +249,15 @@
         }
 
         .back-to-top:hover {
-            background-color:#457B9D;
-            color:whitesmoke;
+            background-color: #457B9D;
+            color: whitesmoke;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
             transform: translateY(-5px);
         }
 
-        /* Pied de page */
+        /* Footer */
         .footer {
-            background-color: #457B9D; /* Bleu */
+            background-color: #457B9D;
             color: white;
             text-align: center;
             padding: 40px 20px;
@@ -292,7 +275,7 @@
             text-decoration: underline;
         }
 
-        /* Responsivité */
+        /* Styles responsifs */
         @media (max-width: 768px) {
             .nav_menu {
                 flex-direction: column;
@@ -386,16 +369,14 @@
         }
     </style>
 </head>
-
 <body>
-
     <!-- En-tête -->
     <div id="top" class="header">
         <h1>Lire et faire lire</h1>
         <p style="font-weight:200;">Les histoires n'attendent que vous pour être lues</p>
     </div>
 
-    <!-- Menu de navigation en bas à droite -->
+    <!-- Menu de navigation -->
     <div class="nav_menu">
         <a href="#livres">Livres</a>
         <a href="#actu">Actualités</a>
@@ -406,18 +387,28 @@
     <div id="livres" class="content-section">
         <h2>Nos Livres</h2>
         <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
-        <div class="book-list">
-            <div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 1">
-                <h3>Le Voyage de l'âme</h3>
-                <p>Un voyage littéraire à travers des horizons inexplorés, qui vous emmène dans les profondeurs de l'existence humaine.</p>
-                <button class="button-stylized">En savoir plus</button>
-            </div>
-            <div class="book-item">
-                <img src="https://via.placeholder.com/250" alt="Livre 2">
-                <h3>La Plume et l'Encre</h3>
-                <p>Un roman intemporel sur le pouvoir des mots et leur capacité à transformer le monde autour de nous.</p>
-                <button class="button-stylized">En savoir plus</button>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list', -1)">→</button>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="https://via.placeholder.com/250" alt="Livre 1">
+                    <h3>Le Voyage de l'âme</h3>
+                    <p>Un voyage littéraire à travers des horizons inexplorés, qui vous emmène dans les profondeurs de l'existence humaine.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item">
+                    <img src="https://via.placeholder.com/250" alt="Livre 2">
+                    <h3>La Plume et l'Encre</h3>
+                    <p>Un roman intemporel sur le pouvoir des mots et leur capacité à transformer le monde autour de nous.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item">
+                    <img src="https://via.placeholder.com/250" alt="Livre 3">
+                    <h3>Les Contes du Soir</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
             </div>
         </div>
     </div>
@@ -425,16 +416,25 @@
     <!-- Section Actualités -->
     <div id="actu" class="content-section">
         <h2>Actualités</h2>
-        <div class="article-list">
-            <div class="article">
-                <h3>Nouvelle Initiative</h3>
-                <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-                <button class="button-stylized">Lire plus</button>
-            </div>
-            <div class="article">
-                <h3>Événement à venir</h3>
-                <p>Ne manquez pas notre prochain événement pour les passionnés de littérature.</p>
-                <button class="button-stylized">Lire plus</button>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('article-list', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('article-list', -1)">→</button>
+            <div class="article-list">
+                <div class="article">
+                    <h3>Nouvelle Initiative</h3>
+                    <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
+                    <button class="button-stylized">Lire plus</button>
+                </div>
+                <div class="article">
+                    <h3>Événement à venir</h3>
+                    <p>Ne manquez pas notre prochain événement pour les passionnés de littérature.</p>
+                    <button class="button-stylized">Lire plus</button>
+                </div>
+                <div class="article">
+                    <h3>Atelier de Lecture</h3>
+                    <p>Participez à nos ateliers de lecture interactifs pour développer vos compétences.</p>
+                    <button class="button-stylized">Lire plus</button>
+                </div>
             </div>
         </div>
     </div>
@@ -459,11 +459,33 @@
     <!-- Bouton Retour en haut -->
     <a href="#top" class="back-to-top">↑</a>
 
-    <!-- Pied de page -->
+    <!-- Footer -->
     <div class="footer">
         <p>© 2024 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://github.com/tonio-chopy">Créateur du site</a></p>
     </div>
 
-</body>
+    <script>
+        function moveCarousel(listClass, direction) {
+            const list = document.querySelector(`.${listClass}`);
+            const items = list.children;
+            const itemWidth = items[0].offsetWidth + 30;
+            let currentPosition = parseInt(list.style.transform?.replace('translateX(', '').replace('px)', '') || 0);
+            
+            currentPosition += direction * itemWidth;
+            
+            const maxScroll = -(items.length * itemWidth - list.parentElement.offsetWidth);
+            if (currentPosition > 0) currentPosition = 0;
+            if (currentPosition < maxScroll) currentPosition = maxScroll;
+            
+            list.style.transform = `translateX(${currentPosition}px)`;
+        }
 
+        window.addEventListener('resize', () => {
+            const lists = document.querySelectorAll('.book-list, .article-list');
+            lists.forEach(list => {
+                list.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
 </html>
