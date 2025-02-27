@@ -172,13 +172,13 @@
         }
 
         /* Adaptation des styles existants pour le carousel */
-        .book-list, .article-list {
+        .book-list, .article-list, .book-list2, .book-list3, .book-list4, .book-list5, .book-list6, .book-list7, .book-list8, .book-list9, .book-list10, .book-list11, .book-list12, .book-list13 {
             display: flex;
             gap: 30px;
             transition: transform 0.3s ease;
         }
 
-        .book-item, .article {
+        .book-item, .article, .book-item2, .book-item3, .book-item4, .book-item5, .book-item6, .book-item7, .book-item8, .book-item9, .book-item10, .book-item11, .book-item12, .book-item13 {
             min-width: 300px;
             flex-shrink: 0;
             background-color: #fff;
@@ -188,24 +188,24 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .book-item:hover, .article:hover {
+        .book-item:hover, .article:hover, .book-item2:hover, .book-item3:hover, .book-item4:hover, .book-item5:hover, .book-item6:hover, .book-item7:hover, .book-item8:hover, .book-item9:hover, .book-item10:hover, .book-item11:hover, .book-item12:hover, .book-item13:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .book-item img {
+        .book-item img, .book-item2 img, .book-item3 img, .book-item4 img, .book-item5 img, .book-item6 img, .book-item7 img, .book-item8 img, .book-item9 img, .book-item10 img, .book-item11 img, .book-item12 img, .book-item13 img {
             max-width: 100%;
             border-radius: 8px;
             margin-bottom: 20px;
         }
 
-        .book-item h3, .article h3 {
+        .book-item h3, .article h3, .book-item2 h3, .book-item3 h3, .book-item4 h3, .book-item5 h3, .book-item6 h3, .book-item7 h3, .book-item8 h3, .book-item9 h3, .book-item10 h3, .book-item11 h3, .book-item12 h3, .book-item13 h3 {
             font-size: 1.6em;
             margin-bottom: 15px;
             color: #333;
         }
 
-        .book-item p, .article p {
+        .book-item p, .article p, .book-item2 p, .book-item3 p, .book-item4 p, .book-item5 p, .book-item6 p, .book-item7 p, .book-item8 p, .book-item9 p, .book-item10 p, .book-item11 p, .book-item12 p, .book-item13 p {
             font-size: 1.1em;
             color: #777;
         }
@@ -313,11 +313,11 @@
                 max-width: 100%;
             }
 
-            .book-list {
+            .book-list, .book-list2, .book-list3, .book-list4, .book-list5, .book-list6, .book-list7, .book-list8, .book-list9, .book-list10, .book-list11, .book-list12, .book-list13 {
                 grid-template-columns: 1fr;
             }
 
-            .book-item {
+            .book-item, .book-item2, .book-item3, .book-item4, .book-item5, .book-item6, .book-item7, .book-item8, .book-item9, .book-item10, .book-item11, .book-item12, .book-item13 {
                 max-width: 100%;
             }
 
@@ -355,11 +355,11 @@
                 font-size: 1em;
             }
 
-            .book-item h3 {
+            .book-item h3, .book-item2 h3, .book-item3 h3, .book-item4 h3, .book-item5 h3, .book-item6 h3, .book-item7 h3, .book-item8 h3, .book-item9 h3, .book-item10 h3, .book-item11 h3, .book-item12 h3, .book-item13 h3 {
                 font-size: 1.4em;
             }
 
-            .book-item p {
+            .book-item p, .book-item2 p, .book-item3 p, .book-item4 p, .book-item5 p, .book-item6 p, .book-item7 p, .book-item8 p, .book-item9 p, .book-item10 p, .book-item11 p, .book-item12 p, .book-item13 p {
                 font-size: 1em;
             }
 
@@ -379,13 +379,11 @@
     <!-- Menu de navigation -->
     <div class="nav_menu">
         <a href="#livres">Livres</a>
-        <a href="#actu">Actualités</a>
-        <a href="#formation">Formation</a>
     </div>
 
     <!-- Section Livres -->
     <div id="livres" class="content-section">
-        <h2>Nos Livres</h2>
+        <h2>Classiques et Aventures</h2>
         <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
         <div class="carousel-container">
             <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list', 1)">←</button>
@@ -1852,56 +1850,390 @@
             </div>
         </div>
     </div>
-
-    <!-- Section Actualités -->
-    <div id="actu" class="content-section">
-        <h2>Actualités</h2>
+    
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Séries et Collections</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
         <div class="carousel-container">
-            <button class="carousel-nav carousel-prev" onclick="moveCarousel('article-list', 1)">←</button>
-            <button class="carousel-nav carousel-next" onclick="moveCarousel('article-list', -1)">→</button>
-            <div class="article-list">
-                <div class="article">
-                    <h3>Nouvelle Initiative</h3>
-                    <p>Découvrez nos nouvelles initiatives pour encourager la lecture dans les écoles.</p>
-                    <button class="button-stylized">Lire plus</button>
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list2', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list2', -1)">→</button>
+            <div class="book-list2">
+              <div class="book-item2">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
                 </div>
-                <div class="article">
-                    <h3>Événement à venir</h3>
-                    <p>Ne manquez pas notre prochain événement pour les passionnés de littérature.</p>
-                    <button class="button-stylized">Lire plus</button>
+                <div class="book-item2">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
                 </div>
-                <div class="article">
-                    <h3>Atelier de Lecture</h3>
-                    <p>Participez à nos ateliers de lecture interactifs pour développer vos compétences.</p>
-                    <button class="button-stylized">Lire plus</button>
+                <div class="book-item2">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
                 </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Contes et Légendes</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list3', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list3', -1)">→</button>
+            <div class="book-list3">
+              <div class="book-item3">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item3">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item3">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Fantaisie et Imaginaire</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list4', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list4', -1)">→</button>
+            <div class="book-list4">
+              <div class="book-item4">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item4">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item4">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Nature et Découverte</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list5', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list5', -1)">→</button>
+            <div class="book-list5">
+              <div class="book-item5">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item5">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item5">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Poésie et Littérature Jeunesse</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list6', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list6', -1)">→</button>
+            <div class="book-list6">
+              <div class="book-item6">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item6">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item6">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Education et Vie Quotidienne</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list7', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list7', -1)">→</button>
+            <div class="book-list7">
+              <div class="book-item7">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item7">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item7">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Humour et Histoires Drôles</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list8', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list8', -1)">→</button>
+            <div class="book-list8">
+              <div class="book-item8">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item8">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item8">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Science et Découverte</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list9', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list9', -1)">→</button>
+            <div class="book-list9">
+              <div class="book-item9">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item9">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item9">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Art et Créativité</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list10', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list10', -1)">→</button>
+            <div class="book-list10">
+              <div class="book-item10">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item10">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item10">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Histoires émouvantes et réfléxives</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list11', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list11', -1)">→</button>
+            <div class="book-list11">
+              <div class="book-item11">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item11">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item11">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Livres pour les Tout-Petits</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list12', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list12', -1)">→</button>
+            <div class="book-list12">
+              <div class="book-item12">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item12">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item12">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
             </div>
         </div>
     </div>
 
-    <!-- Section Formation -->
-    <div id="formation" class="content-section">
-        <h2>Formations</h2>
-        <div class="article-list">
-            <div class="article">
-                <h3>Formation en Lecture</h3>
-                <p>Apprenez à améliorer vos compétences en lecture avec nos sessions spécialisées.</p>
-                <button class="button-stylized">Lire plus</button>
-            </div>
-            <div class="article">
-                <h3>Écriture Créative</h3>
-                <p>Libérez votre créativité et explorez les différentes formes d'écriture créative.</p>
-                <button class="button-stylized">Lire plus</button>
+                <!-- Section Livres -->
+    <div id="livres" class="content-section">
+        <h2>Thèmes sociaux et éducatifs</h2>
+        <p>Explorez notre sélection de livres captivants mis à disposition de nos bénévoles.</p>
+        <div class="carousel-container">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel('book-list13', 1)">←</button>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel('book-list13', -1)">→</button>
+            <div class="book-list13">
+              <div class="book-item13">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item13">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+                <div class="book-item13">
+                    <img src="https://via.placeholder.com/250" alt="Livre 243">
+                    <h3>Yoshka</h3>
+                    <p>Une collection magique d'histoires pour enchanter les soirées des petits et des grands.</p>
+                    <button class="button-stylized">En savoir plus</button>
+                </div>
+
+
             </div>
         </div>
     </div>
+    
 
     <!-- Bouton Retour en haut -->
     <a href="#top" class="back-to-top">↑</a>
 
     <!-- Footer -->
     <div class="footer">
-        <p>© 2024 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://github.com/tonio-chopy">Créateur du site</a></p>
+        <p>© 2025 Lire et faire lire Charente | <a href="https://www.facebook.com/p/Lire-et-faire-lire-Charente-100070027402248/">Contact</a> | <a href="https://github.com/tonio-chopy">Créateur du site</a></p>
     </div>
 
     <script>
